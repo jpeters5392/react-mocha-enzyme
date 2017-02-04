@@ -1,6 +1,6 @@
 import React from 'react';
 import { expect } from 'chai';
-import { shallow } from 'enzyme';
+import { shallow, render } from 'enzyme';
 import { Header, mapStateToProps } from '../Header.jsx';
 import AppName from '../AppName.jsx';
 import Purpose from '../Purpose.jsx';
@@ -25,6 +25,16 @@ describe('Header', () => {
     it('should pass the purpose prop to the Purpose component', () => {
         const wrapper = shallow(<Header appName="MockAppName" purpose="MockPurpose" />);
         expect(wrapper.find(Purpose).first().props().purpose).to.equal("MockPurpose");
+    });
+
+    it('should not see the implementation of the Purpose component', () => {
+        const wrapper = shallow(<Header appName="MockAppName" purpose="MockPurpose" />);
+        expect(wrapper.find('p')).to.have.length(0);
+    });
+
+    it('should see the implementation of the Purpose component if I render', () => {
+        const wrapper = render(<Header appName="MockAppName" purpose="MockPurpose" />);
+        expect(wrapper.find('p')).to.have.length(1);
     });
 
     describe('mapStateToProps', () => {
