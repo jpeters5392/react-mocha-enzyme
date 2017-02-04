@@ -1,0 +1,45 @@
+{
+  "name": "react-mocha-enzyme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha .initMocha.js '**/__tests__/*.mocha.js' --compilers js:babel-register",
+    "build": "webpack",
+    "full": "npm run build && node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpeters5392/react-mocha-enzyme.git"
+  },
+  "author": "Joel Peterson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jpeters5392/react-mocha-enzyme/issues"
+  },
+  "homepage": "https://github.com/jpeters5392/react-mocha-enzyme#readme",
+  "dependencies": {
+    "babel-loader": "^6.2.10",
+    "immutable": "^3.8.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.2",
+    "redux": "^3.6.0",
+    "redux-immutable": "^3.0.11",
+    "reselect": "^2.5.4",
+    "webpack": "^2.2.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
+    "chai": "^3.5.0",
+    "enzyme": "^2.7.1",
+    "express": "^4.14.1",
+    "jsdom": "^9.9.1",
+    "jsdom-global": "^2.1.1",
+    "mocha": "^3.2.0",
+    "react-addons-test-utils": "^15.4.2",
+    "sinon": "^1.17.7"
+  }
+}
